@@ -6,10 +6,17 @@ import { useState } from "react";
 import AddFoodForm from './components/AddFoodForm/AddFoodForm'
 
 
+
  
 function App() {
-
   const[foodsArray, setFoodsArray] = useState(foods)
+
+  const deleteFood = (itemNameToDelete) => {
+    const filteredFoodArray = foodsArray.filter((item) => {
+      return itemNameToDelete !== item.name;
+    });
+    setFoodsArray(filteredFoodArray)
+  }
 
   return <div className="App">
   <AddFoodForm foodsArray={foodsArray} setFoodsArray={setFoodsArray}/>
@@ -17,7 +24,7 @@ function App() {
   <Col>
     {foodsArray.map((item, index) => {
       return (
-      <FoodBox item={item} key={index + Date.now()}/>
+      <FoodBox item={item} key={index + Date.now()} deleteFood={deleteFood}/>
       )
     })}
   </Col>
