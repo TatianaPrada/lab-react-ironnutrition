@@ -1,19 +1,19 @@
 import "./App.css";
-// import { Card, Row, Col, Divider, Input, Button } from "antd";
+import FoodBox from "./components/FoodBox/FoodBox";
+import { Card, Row, Col, Divider, Input, Button } from "antd";
 import foods from "./foods.json";
+
 
 function App() {
   return <div className="App">
   <h2>Food List: </h2>
+  <Col>
     {foods.map((item, index) => {
-          return (
-          <div>
-            <p>{item.name}</p>
-            <img src={item.image} alt="food" width="70px"/>
-          </div>
-          );
-        })}
-
+      return (
+      <FoodBox item={item} key={index + Date.now()}/>
+      )
+    })}
+  </Col>
   </div>;
 }
 export default App; 
