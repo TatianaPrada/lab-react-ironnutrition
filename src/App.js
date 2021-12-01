@@ -1,12 +1,9 @@
 import "./App.css";
 import FoodBox from "./components/FoodBox/FoodBox";
-import { Card, Row, Col, Divider, Input, Button } from "antd";
+import {Col } from "antd";
 import foods from "./foods.json";
 import { useState } from "react";
 import AddFoodForm from './components/AddFoodForm/AddFoodForm'
-
-
-
  
 function App() {
   const[foodsArray, setFoodsArray] = useState(foods)

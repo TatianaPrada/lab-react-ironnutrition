@@ -1,12 +1,10 @@
 
-import { Card, Row, Col, Divider, Input, Button } from "antd";
+import { Card, Button } from "antd";
 import './FoodBox.css'
 
 
 function FoodBox(props) {
     const {name, calories, image, servings} = props.item
-
-
 
   return <div className="FoodBox">
 
